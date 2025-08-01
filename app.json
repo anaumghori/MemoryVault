@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "sdkVersion": "53.0.0",
+    "scheme": "memoryvault",
+    "userInterfaceStyle": "light",
+    "orientation": "portrait",
+    "web": {
+      "output": "static",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://memoryvault.app"
+        }
+      ],
+      "expo-sqlite",
+      "expo-audio",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "mainApplicationPath": "./android/app/src/main/java/com/anaum/memory_vault/MainApplication.kt",
+            "mainActivityPath": "./android/app/src/main/java/com/anaum/memory_vault/MainActivity.kt",
+            "settingsGradlePath": "./android/settings.gradle",
+            "appBuildGradlePath": "./android/app/build.gradle"
+          }
+        }
+      ]
+    ],
+    "assetBundlePatterns": [
+      "assets/*"
+    ],
+    "name": "Memory Vault",
+    "slug": "memory-vault",
+    "description": "AI-powered memory assistance for individuals with memory challenges",
+    "version": "1.0.0",
+    "backgroundColor": "#FFFFFF",
+    "primaryColor": "#A0522D",
+    "android": {
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.anonymous.memoryvault"
+    }
+  }
+}
