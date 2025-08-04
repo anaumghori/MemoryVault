@@ -4,10 +4,9 @@ import React, { useState } from "react"
 import { View, Text, TouchableOpacity, ScrollView, SafeAreaView, StatusBar } from "react-native"
 import { useMemoryVault } from "../app/contexts/MemoryVaultContext"
 import { ArrowLeft, Brain, Lightbulb, Trophy, Gamepad2, Sparkles } from "lucide-react-native"
-import { Quiz } from "../games/quiz"
 import { CompleteMemory } from "../games/completeMemory"
 
-type GameType = "menu" | "quiz" | "memory"
+type GameType = "menu" | "memory"
 
 export const GamesScreen: React.FC = () => {
   const [currentGame, setCurrentGame] = useState<GameType>("menu")
@@ -19,8 +18,6 @@ export const GamesScreen: React.FC = () => {
 
   const renderGameContent = () => {
     switch (currentGame) {
-      case "quiz":
-        return <Quiz onBack={() => setCurrentGame("menu")} />
       case "memory":
         return <CompleteMemory onBack={() => setCurrentGame("menu")} />
       default:
@@ -33,40 +30,15 @@ export const GamesScreen: React.FC = () => {
       {/* Header Section */}
       <View className="p-8 items-center">
         <Gamepad2 size={80} color={primaryGreen} className="mb-6" />
-        <Text className="text-3xl font-bold text-green-800 mb-4 text-center">Memory Games</Text>
+        <Text className="text-3xl font-bold text-green-800 mb-4 text-center">Memory Game</Text>
         <Text className="text-xl text-green-700 text-center leading-7 font-medium">
-          Test your memory with fun, AI-powered games based on your personal experiences
+          Exercise your memory with AI-powered games based on your personal experiences
         </Text>
       </View>
 
       {/* Games Grid */}
       <View className="px-6 pb-8">
-        {/* Quiz Game */}
-        <TouchableOpacity
-          className="p-8 rounded-2xl mb-6 bg-white shadow border-2 border-green-200"
-          onPress={() => setCurrentGame("quiz")}
-        >
-          <View className="flex-row items-center mb-4">
-            <Brain size={48} color={primaryGreen} style={{ marginRight: 16 }} />
-            <View className="flex-1">
-              <Text className="text-2xl font-bold text-green-800 mb-2">Memory Quiz</Text>
-              <Text className="text-lg text-green-700 font-medium">
-                Test your recall with personalized questions
-              </Text>
-            </View>
-          </View>
-          
-          <View className="p-4 rounded-xl border-2 border-green-200" style={{ backgroundColor: lightGreen }}>
-            <Text className="text-lg text-green-800 leading-6">
-              AI creates custom quiz questions from your memories. Answer questions about specific details from your notes and experiences.
-            </Text>
-          </View>
-          
-          <View className="flex-row items-center mt-4">
-            <Trophy size={20} color="#f59e0b" style={{ marginRight: 8 }} />
-            <Text className="text-lg font-bold text-green-800">Challenge your memory!</Text>
-          </View>
-        </TouchableOpacity>
+
 
         {/* Memory Completion Game */}
         <TouchableOpacity
@@ -97,7 +69,7 @@ export const GamesScreen: React.FC = () => {
 
         {/* Benefits Section */}
         <View className="p-6 rounded-2xl bg-green-50 border-2 border-green-200">
-          <Text className="text-2xl font-bold text-green-800 mb-4 text-center">Why Play Memory Games?</Text>
+          <Text className="text-2xl font-bold text-green-800 mb-4 text-center">Why Play This Memory Game?</Text>
           <View className="space-y-3">
             <View className="flex-row items-center">
               <View className="w-3 h-3 rounded-full mr-4" style={{ backgroundColor: primaryGreen }} />
@@ -153,8 +125,7 @@ export const GamesScreen: React.FC = () => {
         <View className="flex-1 flex-row items-center justify-center">
           {currentGame === "menu" && <Gamepad2 size={24} color={primaryGreen} style={{ marginRight: 12 }} />}
           <Text className="text-2xl font-bold text-green-800 text-left" numberOfLines={1}>
-            {currentGame === "menu" ? "Memory Game" : 
-             currentGame === "quiz" ? "Memory Quiz" : "Complete the Memory"}
+            {currentGame === "menu" ? "Memory Game" : "Complete the Memory"}
           </Text>
         </View>
         

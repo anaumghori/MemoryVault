@@ -95,7 +95,7 @@ export const HomeScreen: React.FC = () => {
             >
               <MessageCircle size={40} color={primaryGreen} style={{ marginBottom: 12 }} />
               <Text className="text-2xl font-bold text-green-800 mb-2">Chat with AI Assistant</Text>
-              <Text className="text-lg text-green-700 font-medium">Ask about your memories or take a quiz</Text>
+              <Text className="text-lg text-green-700 font-medium">Ask about your memories and experiences</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -112,8 +112,8 @@ export const HomeScreen: React.FC = () => {
               onPress={() => setCurrentScreen("games")}
             >
               <Gamepad2 size={40} color={primaryGreen} style={{ marginBottom: 12 }} />
-              <Text className="text-2xl font-bold text-green-800 mb-2">Memory Games</Text>
-              <Text className="text-lg text-green-700 font-medium">Test your recall with fun quizzes</Text>
+              <Text className="text-2xl font-bold text-green-800 mb-2">Memory Game</Text>
+              <Text className="text-lg text-green-700 font-medium">Exercise your memory with fun challenges</Text>
             </TouchableOpacity>
           </View>
         </View>

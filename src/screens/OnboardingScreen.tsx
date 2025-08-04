@@ -84,7 +84,7 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete }
               <Target size={32} color={primaryGreen} />
             </View>
             <Text className="text-xl flex-1 text-green-800 font-medium">
-              Take personalized quizzes to strengthen memories
+              Play memory games to strengthen recall
             </Text>
           </View>
 
