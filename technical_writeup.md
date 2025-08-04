@@ -13,7 +13,7 @@ Memory Vault was built to address these challenges head-on. It offers a simpler,
 The system includes an interactive memory training game designed to strengthen recall and engagement. The memory completion game presents partial memories for the user to complete, evaluating the accuracy of their recall and providing feedback or hints when needed. The game leverages the AI system to create adaptive cognitive exercises that are tailored to each user's memories and cognitive patterns, making the training more relevant and effective.
 
 **2. Multimodal Notes**  
-The comprehensive note creation system supports titles, descriptions, visual documentation through camera capture or gallery selection, and audio recordings of voices or ambient sounds. Integrated playback features enable users to experience their stored memories through direct audio playback and image viewing within the interface.
+The comprehensive note creation system supports titles, descriptions, visual documentation through gallery selection, and audio recordings of voices or ambient sounds. Integrated playback features enable users to experience their stored memories through direct audio playback and image viewing within the interface.
 
 **3. Reminiscence Therapy**  
 This therapeutic feature helps users reconnect with their past through AI-curated memory experiences. The system analyzes saved notes to identify recurring themes then weaves selected memories into cohesive, story-like narratives. The experience combines gentle storytelling.
