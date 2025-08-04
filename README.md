@@ -2,7 +2,7 @@
 
 A privacy-first, offline memory management app that helps users store, organize, and interact with their personal memories using on-device AI. Powered by Google's Gemma 3n model, Memory Vault keeps all your data completely private and accessible without an internet connection.
 
-📖 For detailed technical information, architecture, and features, please read [Technical Writeup](./technical_writeup.md)**
+📖 For detailed technical information, architecture, and features, please read [Technical Writeup](./technical_writeup.md)
 
 ## On-Device AI Model Setup
 
