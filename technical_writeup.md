@@ -39,7 +39,7 @@ The state management layer is built around a centralized MemoryVaultContext, whi
 
 **2. Local Data Architecture:** Memory Vault follows a local-first storage approach, combining a structured SQLite database with the device’s file system to keep all data fully offline. On installation, the app initializes SQLite as its primary storage, creating a self-contained database that stays entirely on the user’s device and persists across sessions and restarts. Larger files, such as Gemma 3n model files, are stored in the device’s file system. This architecture ensures fast access, complete offline functionality, and strong privacy, as all data remains securely on the user’s device without relying on external servers.
 
-**3. Integration of Gemma 3n**
+# Integration of Gemma 3n
 The integration of Gemma is built on a hybrid architecture that separates high-performance native operations from the application's UI logic. This was achieved by creating a native bridge between the React Native frontend and a custom Kotlin module on Android. At the core of this integration is Google's MediaPipe framework, which runs the Gemma model directly on the user's device. The process is managed through a layered system:
 
 - **Native Layer (Kotlin):** A custom module, `GemmaBridgeModule.kt`, handles all direct interactions with the MediaPipe `LlmInference` task. It's responsible for loading the model from device storage, running inference, and managing the model's lifecycle. It also intelligently determines whether to use the CPU or GPU for inference, checking device capabilities to optimize performance and automatically falling back to CPU if a GPU is not suitable.
