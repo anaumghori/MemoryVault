@@ -10,7 +10,7 @@ Memory Vault was built to address these challenges head-on. It offers a simpler,
 # Core Features
 
 **1. Memory Game Integration**  
-The system includes an interactive memory training game designed to strengthen recall and engagement. The memory completion game presents partial memories for the user to complete, evaluating the accuracy of their recall and providing feedback or hints when needed. The game leverages the AI system to create adaptive cognitive exercises that are tailored to each user's memories and cognitive patterns, making the training more relevant and effective.
+The app features an interactive memory game that strengthens recall by presenting partial memories for users to complete. The game leverages the AI to create adaptive cognitive exercises that are tailored to each user's memories and cognitive patterns, making the training more relevant and effective.
 
 **2. Multimodal Notes**  
 The comprehensive note creation system supports titles, descriptions, visual documentation through gallery selection, and audio recordings of voices or ambient sounds. Integrated playback features enable users to experience their stored memories through direct audio playback and image viewing within the interface.
@@ -19,10 +19,10 @@ The comprehensive note creation system supports titles, descriptions, visual doc
 This therapeutic feature helps users reconnect with their past through AI-curated memory experiences. The system analyzes saved notes to identify recurring themes then weaves selected memories into cohesive, story-like narratives. The experience combines gentle storytelling.
 
 **4. Chat with AI**  
-The app provides a secure, private, and conversational AI assistant powered by the on-device Gemma 3n model. Users can engage in natural, open-ended conversations, ask questions about their memories, or simply chat to combat loneliness. The interface supports both text and image inputs, allowing the AI to understand and respond to visual context. All conversation history is stored locally in the device's SQLite database, ensuring that every interaction remains completely private and accessible offline.
+The app provides a secure, private, and conversational AI assistant powered by the on-device Gemma 3n model. Users can engage in natural, open-ended conversations, ask questions about their memories, or simply chat to combat loneliness. The interface supports both text and image inputs, allowing the AI to understand and respond to visual context. All conversation history is stored locally in the device's SQLite database.
 
 **5. Private-Offline ready**  
-The entire system is engineered to be fully private and functional without an internet connection. All user data including notes, images, audio recordings, and chat logs is stored exclusively on the device's local storage and is never sent to or stored on any external server. The AI model is bundled with the app and runs directly on the device, meaning no network calls are made for inference. This offline-first, privacy-centric design eliminates the need for user accounts or logins, providing a truly anonymous and secure environment where users have complete control over their personal information.
+The entire system is engineered to be fully private and functional without an internet connection. All user data including notes, images, audio recordings, and chat logs is stored exclusively on the device's local storage and is never sent to or stored on any external server. The Gemma 3n model is fully packaged within the app at installation, requiring no separate downloads or internet connection.
 
 
 # System Architecture
@@ -48,12 +48,7 @@ The integration of Gemma is built on a hybrid architecture that separates high-p
 
 - **React Hooks Layer:** The entire system is abstracted away from the UI by a simple React hook, `useGemmaModel`. This hook provides components with the model's current status (e.g., loading, ready, error) and clean functions to interact with it, making it easy to build features like the AI Chat.
 
-A critical part of the implementation is how the app leverages Gemma's native multimodal capabilities to understand both text and images. When a user submits a prompt with an image, the request flows through our system to deliver a truly contextual response:
-1. The text prompt and the image's local file path are passed from the UI to the `ModelManager`.
-2. The request is sent across the native bridge to our `GemmaBridgeModule.kt` module.
-3. The Kotlin module initiates a special inference session with the model's vision modality enabled.
-4. It then loads the user's image from its file path, converts it into a format that MediaPipe can process (`MPImage`), and adds both the image and the text prompt to the session.
-5. Finally, the module requests a response from Gemma, which generates text based on the combined context of the user's words and the contents of the image.
+A critical part of the implementation is how the app leverages Gemma's native multimodal capabilities to understand both text and images. When a user submits a prompt with an image, the request flows through our system to deliver a truly contextual response.
 
 # Techstack / Technologies 
 **Core Framework:**
