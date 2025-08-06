@@ -8,7 +8,7 @@ A privacy-first, offline memory management app that helps users store, organize,
 
 Memory Vault uses Google's Gemma 3n model that runs entirely on your device for complete privacy. The codebase includes all the necessary bridge code and model integration, but due to GitHub's file size limitations, you'll need to add the model file manually.
 
-### Required Setup:
+### Required Setup before running the code:
 1. **Download the Gemma 3n model**: Obtain the `.task` file for Gemma 3n
 2. **Place in assets folder**: Copy the model file to `assets/gemma.task`
 
